@@ -7542,22 +7542,31 @@ Individual Project: Building and Evaluating a Machine Learning Pipeline using th
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="2">
-<li><p>Problem Definition
-Business Problem</p>
-<p>Banks used lot of resources on direct marketing campaigns. Connect with customers who are unlikely to subscribe increases operational costs and reduces marketing efficiency. Hence, observe customer responses before launching a campaign can improve decision-making and increase campaign success.</p>
-<p>Machine Learning Problem</p>
-<p>This is a binary classification problem.</p>
-<p>The objective is to predict whether a customer will subscribe to a term deposit after being contacted during a marketing campaign.</p>
-<p>Target Variable
-y</p>
-<p>Possible values
+<pre><code>2. Problem Definition
+Business Problem
+
+Banks used lot of resources on direct marketing campaigns. Connect with customers who are unlikely to subscribe increases operational costs and reduces marketing efficiency. Hence, observe customer responses before launching a campaign can improve decision-making and increase campaign success.
+
+Machine Learning Problem
+
+This is a binary classification problem.
+
+The objective is to predict whether a customer will subscribe to a term deposit after being contacted during a marketing campaign.
+
+Target Variable
+y
+
+Possible values
 yes
-no</p>
-<p>Input Features</p>
-<p>The prediction is based on customer demographic information, financial information, previous campaign history and communication details.</p>
-<p>Examples include</p>
-<p>Age
+no
+
+Input Features
+
+The prediction is based on customer demographic information, financial information, previous campaign history and communication details.
+
+Examples include
+
+Age
 Job
 Marital Status
 Education
@@ -7567,15 +7576,15 @@ Personal Loan
 Contact Method
 Campaign
 Previous Outcome
-Why is this problem important?</p>
-<p>Accurate prediction enables banks to</p>
-<p>Reduce marketing costs
+Why is this problem important?
+
+Accurate prediction enables banks to
+
+Reduce marketing costs
 Improve customer targeting
 Increase campaign effectiveness
 Save employee time
-Improve customer satisfaction</p>
-</li>
-</ol>
+Improve customer satisfaction</code></pre>
 </div>
 </div>
 </div>
@@ -7588,31 +7597,32 @@ Improve customer satisfaction</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol start="3">
 <li><p>Dataset Description
-Dataset Name</p>
-<p>Bank Marketing Dataset</p>
-<p>Dataset Source</p>
-<p>UCI Machine Learning Repository</p>
-<p>Dataset Link</p>
-<p><a href="https://archive.ics.uci.edu/ml/datasets/bank+marketing">https://archive.ics.uci.edu/ml/datasets/bank+marketing</a></p>
-<p>Alternative OpenML Dataset</p>
-<p><a href="https://www.openml.org/d/1461">https://www.openml.org/d/1461</a></p>
-<p>Dataset Creator</p>
-<p>Moro, Rita, and Cortez</p>
-<p>License</p>
-<p>Public Research Dataset</p>
-<p>Machine Learning Task</p>
-<p>Binary Classification</p>
-<p>Number of Records</p>
-<p>45,211</p>
-<p>Number of Features</p>
-<p>16 Input Features</p>
+Dataset Name: Bank Marketing Dataset</p>
+<p>Dataset Source: UCI Machine Learning Repository</p>
+<p>Dataset Link: <a href="https://archive.ics.uci.edu/ml/datasets/bank+marketing">https://archive.ics.uci.edu/ml/datasets/bank+marketing</a>
+Alternative OpenML Dataset: <a href="https://www.openml.org/d/1461">https://www.openml.org/d/1461</a></p>
+<p>Dataset Creator: Moro, Rita, and Cortez</p>
+<p>License: Public Research Dataset</p>
+<p>Machine Learning Task: Binary Classification</p>
+<p>Number of Records: 45,211
+Number of Features: 16 Input Features</p>
 <p>1 Target Variable</p>
-<p>Target Variable</p>
-<p>y</p>
-<p>Values</p>
-<p>yes
-no</p>
+<p>Target Variable: y
+Values:  yes, no</p>
 </li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3efca477">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="4">
+<li><h2 id="Exploratory-Data-Analysis">Exploratory Data Analysis<a class="anchor-link" href="#Exploratory-Data-Analysis">¶</a></h2>Exploratory Data Analysis (EDA) is used to check the structure, quality and characteristics of the Bank Marketing dataset. This section checks and then returns the dataset shape, feature types, missing values, target distribution and descriptive statistics.</li>
 </ol>
 </div>
 </div>
@@ -7624,15 +7634,7 @@ no</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="4">
-<li><p>Import Required Libraries
-Only the required libraries:</p>
-<p>pandas
-numpy
-matplotlib
-scikit-learn</p>
-</li>
-</ol>
+<p>4.1 Import Required Libraries</p>
 </div>
 </div>
 </div>
@@ -7641,7 +7643,7 @@ scikit-learn</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [234]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [292]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Data manipulation</span>
@@ -7664,26 +7666,12 @@ scikit-learn</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4fd2d1af">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="5">
-<li><h2 id="Exploratory-Data-Analysis">Exploratory Data Analysis<a class="anchor-link" href="#Exploratory-Data-Analysis">¶</a></h2></li>
-</ol>
-<p>Exploratory Data Analysis (EDA) is performed to understand the structure, quality, and characteristics of the Bank Marketing dataset before building machine learning models. This step helps identify missing values, duplicate records, feature types, class distribution, and relationships among variables. The insights obtained from EDA guide the preprocessing and feature engineering steps used later in the machine learning pipeline.</p>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7d27e953">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [235]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [293]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load Dataset and dataset colletction</span>
@@ -7699,7 +7687,7 @@ scikit-learn</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[235]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[293]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7853,9 +7841,7 @@ scikit-learn</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="6">
-<li>Display Dataset Information. i.e Data analysis</li>
-</ol>
+<p>4.2 Display Dataset Information. i.e Data analysis</p>
 </div>
 </div>
 </div>
@@ -7864,11 +7850,10 @@ scikit-learn</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [236]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [294]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#6.1 Shape</span>
-<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -7879,7 +7864,7 @@ scikit-learn</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[236]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[294]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>(45211, 17)</pre>
 </div>
@@ -7891,7 +7876,7 @@ scikit-learn</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [237]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [295]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
@@ -7905,7 +7890,7 @@ scikit-learn</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[237]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[295]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Index(['age', 'job', 'marital', 'education', 'default', 'balance', 'housing',
        'loan', 'contact', 'day', 'month', 'duration', 'campaign', 'pdays',
@@ -7920,10 +7905,10 @@ scikit-learn</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [238]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [296]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#6.2 data types</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># data types</span>
 <span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -7971,10 +7956,10 @@ memory usage: 5.9+ MB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [239]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [297]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 6.3 Missing Values</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Missing Values</span>
 <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -7986,7 +7971,7 @@ memory usage: 5.9+ MB
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[239]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[297]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>age          0
 job          0
@@ -8017,7 +8002,7 @@ dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The missing value analysis shows that the dataset contains no missing values</p>
+<p>Result: The missing value analysis shows that the dataset contains no missing values.</p>
 </div>
 </div>
 </div>
@@ -8026,10 +8011,10 @@ dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [240]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [298]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 6.4check duplicate</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># check duplicate</span>
 <span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8041,7 +8026,7 @@ dtype: int64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[240]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[298]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>np.int64(0)</pre>
 </div>
@@ -8055,7 +8040,18 @@ dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Duplicate records were examined because they can bias model training and evaluation. Removing duplicate observations helps improve data quality and prevents certain records from having an unintended influence on the learning process.No duplicate records</p>
+<p>Result: No duplicate records available in dataset.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=863271c0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>4.3 The descriptive statistics summarize the distribution of numerical variables.</p>
 </div>
 </div>
 </div>
@@ -8064,10 +8060,10 @@ dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [241]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [299]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 6.5descriptive statistics</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># descriptive statistics</span>
 <span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8079,7 +8075,7 @@ dtype: int64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[241]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[299]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8196,26 +8192,15 @@ dtype: int64</pre>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=525d1415">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The descriptive statistics summarize the distribution of numerical variables.</p>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=11dd4f93">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [242]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [300]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 6.6 Display the frequency of each class</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Display the frequency of each class</span>
 <span class="n">target_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"y"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">target_counts</span><span class="p">)</span>
@@ -8245,10 +8230,10 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [243]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [301]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 6.7 Display class percentages</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Display class percentages</span>
 <span class="n">target_percentage</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"y"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">target_percentage</span><span class="p">)</span>
@@ -8278,10 +8263,10 @@ Name: proportion, dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [244]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [302]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 6.8 bar chart</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># bar chart</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 
 <span class="n">df</span><span class="p">[</span><span class="s2">"y"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
@@ -8320,7 +8305,7 @@ Name: proportion, dtype: float64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The target variable distribution shows that the majority of customers did not subscribe to the term deposit, while a smaller proportion accepted the offer. This indicates a moderate class imbalance. Therefore, stratified train-test splitting was used to preserve the class distribution during model training and evaluation.</p>
+<p>Result: The target variable distribution shows that the maximumn number of customers did not subscribe to the  term deposit.</p>
 </div>
 </div>
 </div>
@@ -8329,10 +8314,10 @@ Name: proportion, dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [245]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [303]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 6.9 Select numerical columns</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Select numerical columns</span>
 <span class="n">numeric_columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s2">"int64"</span><span class="p">,</span> <span class="s2">"float64"</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">numeric_columns</span><span class="p">)</span>
@@ -8359,10 +8344,10 @@ Name: proportion, dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [246]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [304]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 6.10 Box plot</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#  Box plot</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
@@ -8398,7 +8383,7 @@ Name: proportion, dtype: float64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The boxplots reveal the distribution and spread of the numerical variables. Some variables, particularly balance and duration, contain noticeable outliers. These outliers were retained because they represent genuine customer behaviour rather than data entry errors. Feature scaling was later applied to minimise the impact of differences in variable scales.</p>
+<p>As a result, boxplots display outliers and feature distributions. Scaling was used to decrease inconsistency across variable ranges with maintaining  outliers.</p>
 </div>
 </div>
 </div>
@@ -8407,10 +8392,10 @@ Name: proportion, dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [247]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [305]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 6.11 Display job frequency</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Display job frequency</span>
 <span class="n">job_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"job"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">job_counts</span><span class="p">)</span>
@@ -8450,10 +8435,10 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [248]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [306]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 6.12 Display percentage distribution</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#  Display percentage distribution</span>
 <span class="n">job_percentage</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"job"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">job_percentage</span><span class="p">)</span>
@@ -8493,7 +8478,7 @@ Name: proportion, dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [249]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [307]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -8535,7 +8520,7 @@ Name: proportion, dtype: float64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The job distribution indicates that customers belong to a wide variety of occupations, with management, blue-collar, and technician representing the largest groups. This confirms that the dataset contains diverse customer profiles, making the job attribute a potentially useful predictor. Since job is a categorical feature, it will be transformed using One-Hot Encoding before model training.</p>
+<p>Result: The job data shows different customer groups.</p>
 </div>
 </div>
 </div>
@@ -8546,7 +8531,7 @@ Name: proportion, dtype: float64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>6.13 Correlation Matrix of Numerical Features</p>
+<p>4.4 Correlation Matrix of Numerical Features</p>
 </div>
 </div>
 </div>
@@ -8555,7 +8540,7 @@ Name: proportion, dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [250]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [308]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Select numerical features</span>
@@ -8576,7 +8561,7 @@ Name: proportion, dtype: float64
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[250]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[308]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8688,7 +8673,7 @@ Name: proportion, dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [251]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [309]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -8739,7 +8724,7 @@ Name: proportion, dtype: float64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The correlation matrix indicates generally weak to moderate relationships among the numerical variables. No severe multicollinearity is observed, suggesting that each feature contributes unique information to the prediction task. Therefore, all selected numerical variables were retained for machine learning.</p>
+<p>Result: The correlation matrix shows weak to moderate relationships between features. No strong data overlap exists, so all numerical variables were used.</p>
 </div>
 </div>
 </div>
@@ -8748,7 +8733,7 @@ Name: proportion, dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [252]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [310]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Histogram</span>
@@ -8781,7 +8766,7 @@ Name: proportion, dtype: float64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The histograms illustrate the distribution of the numerical variables. Several features, including balance and duration, exhibit positively skewed distributions. Since numerical variables are measured on different scales, StandardScaler was incorporated into the preprocessing pipeline to improve model performance.</p>
+<p>Result: Histograms show numerical feature distributions and imbalance.</p>
 </div>
 </div>
 </div>
@@ -8792,7 +8777,7 @@ Name: proportion, dtype: float64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>6.11 Initial Findings</p>
+<p>4.5 Initial Findings</p>
 <pre><code>The dataset contains 45211 customer records and 17 variables,  enough data to build and evaluate machine learning models.
 
 The dataset contains both numerical and categorical features. So that different preprocessing methods will be needed before training the models.
@@ -8817,8 +8802,7 @@ Since the dataset contains categorical variables like job, education and marital
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7.-Feature-Engineering">7. Feature Engineering<a class="anchor-link" href="#7.-Feature-Engineering">¶</a></h2><p>Feature engineering is the process of preparing features so that they can be effectively used by machine learning algorithms. In this project, no additional features were created because the original variables in the Bank Marketing dataset already provide sufficient information for predicting customer subscription to a term deposit.</p>
-<p>Instead, feature preparation focused on separating numerical and categorical variables so that appropriate preprocessing techniques could be applied within the machine learning pipeline. Numerical variables will later be imputed and standardized, while categorical variables will be imputed and transformed using One-Hot Encoding.</p>
+<h2 id="5.-Feature-Engineering">5. Feature Engineering<a class="anchor-link" href="#5.-Feature-Engineering">¶</a></h2><p>Feature engineering focused on preparing existing features by separating data types.</p>
 </div>
 </div>
 </div>
@@ -8827,10 +8811,10 @@ Since the dataset contains categorical variables like job, education and marital
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [253]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [311]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 7.1 target distribution</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># target distribution</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">"y"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Target</span>
@@ -8847,10 +8831,10 @@ Since the dataset contains categorical variables like job, education and marital
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [254]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [312]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 7.2 Create Feature Lists</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#  Create Feature Lists</span>
 <span class="n">numeric_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s2">"int64"</span><span class="p">,</span> <span class="s2">"float64"</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 
 <span class="n">categorical_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s2">"object"</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -8883,12 +8867,7 @@ Categorical Features: ['job', 'marital', 'education', 'default', 'housing', 'loa
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">¶</a></h3><p>The dataset contains both numerical and categorical variables. Separating these variables allows different preprocessing techniques to be applied to each data type.</p>
-<ul>
-<li>Numerical variables will be imputed using the median and standardized using StandardScaler.</li>
-<li>Categorical variables will be imputed using the most frequent value and converted into numerical format using One-Hot Encoding.</li>
-</ul>
-<p>This preparation ensures that the preprocessing pipeline can correctly transform each feature before model training.</p>
+<h3 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">¶</a></h3><p>Numerical and categorical features are processed separately using imputation, scaling and encoding to prepare the data correctly for model training.</p>
 </div>
 </div>
 </div>
@@ -8897,7 +8876,7 @@ Categorical Features: ['job', 'marital', 'education', 'default', 'housing', 'loa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [255]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [313]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.compose</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColumnTransformer</span>
@@ -8935,9 +8914,9 @@ Categorical Features: ['job', 'marital', 'education', 'default', 'housing', 'loa
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="8">
+<ol start="6">
 <li>Data Engineering Comparison
-Different preprocessing techniques can influence the performance of machine learning models. This section compares two preprocessing strategies to determine whether feature scaling improves prediction performance. Both strategies use the same machine learning algorithm, allowing the impact of preprocessing to be evaluated fairly.</li>
+This section compares two preprocessing methods to check whether feature scaling improves model performance by using the same methods or algorithm.</li>
 </ol>
 </div>
 </div>
@@ -8947,10 +8926,10 @@ Different preprocessing techniques can influence the performance of machine lear
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [256]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [314]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 8.1 Split the dataset into training (80%) and testing (20%)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Split the dataset into training (80%) and testing (20%)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
 
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
@@ -8987,10 +8966,10 @@ Testing Data: (9043, 16)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [257]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [315]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 8.2: Strategy A – Without Scaling</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Strategy A – Without Scaling</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.compose</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColumnTransformer</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.impute</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimpleImputer</span>
@@ -9022,10 +9001,10 @@ Testing Data: (9043, 16)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [258]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [316]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 8.3 Build the pipeline with logisctic regression </span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#  Build the pipeline with logisctic regression </span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
 
 <span class="n">pipe_A</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
@@ -9063,10 +9042,10 @@ Testing Data: (9043, 16)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [259]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [317]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 8.4: Strategy B – With Scaling</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Strategy B – With Scaling</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
 
 <span class="c1"># Numerical pipeline (with scaling)</span>
@@ -9096,10 +9075,10 @@ Testing Data: (9043, 16)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [260]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [318]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 8.5: Build the Second Pipeline with logisticRegression</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Build the Second Pipeline with logisticRegression</span>
 <span class="n">pipe_B</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
     <span class="p">(</span><span class="s2">"preprocessor"</span><span class="p">,</span> <span class="n">preprocessor_B</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">"model"</span><span class="p">,</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">class_weight</span><span class="o">=</span><span class="s1">'balanced'</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
@@ -9133,10 +9112,10 @@ Testing Data: (9043, 16)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [261]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [319]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 8.6: Compare the Results</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Compare the Results</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="n">comparison</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
@@ -9161,7 +9140,7 @@ Testing Data: (9043, 16)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[261]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[319]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -9208,10 +9187,10 @@ Testing Data: (9043, 16)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [262]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [320]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 8.7: Visual Comparison</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Visual Comparison</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">comparison</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
@@ -9251,8 +9230,7 @@ Testing Data: (9043, 16)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Step 8.8: Interpretation</p>
-<p>The results indicate how feature scaling influences the performance of the Logistic Regression model. If Strategy B achieves higher accuracy than Strategy A, it suggests that StandardScaler improves model performance by placing numerical features on a similar scale, allowing Logistic Regression to learn more effectively. If both strategies produce similar accuracy, it indicates that feature scaling has only a limited impact on prediction performance for this dataset.</p>
+<p>The results show whether scaling improves Logistic Regression. Higher accuracy with Strategy B means StandardScaler helps the model learn better from features.</p>
 </div>
 </div>
 </div>
@@ -9263,7 +9241,7 @@ Testing Data: (9043, 16)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="9">
+<ol start="7">
 <li><p>Machine Learning Models
 10.1 Introduction</p>
 <p>Machine learning models are used to learn patterns from historical data and make predictions for new data. This is a binary classification problem becuase target variable contains two classes with value Yes and No values.</p>
@@ -9280,7 +9258,7 @@ Random Forest</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [263]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [321]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
@@ -9320,7 +9298,7 @@ Random Forest</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [264]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [322]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 9.1 Create the Random Forest model</span>
@@ -9355,12 +9333,10 @@ Random Forest</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="10">
-<li><p>Pipeline Construction
-10.1 Introduction</p>
-<p>A machine learning pipeline combines data preprocessing and model training into a single workflow. Instead of applying preprocessing steps manually before training the model, the pipeline performs all the required steps automatically. This ensures that the same preprocessing is applied to both the training and testing data, making the workflow more consistent and reducing the risk of errors.</p>
-<p>In this project, the best preprocessing strategy identified in the previous section is combined with both Logistic Regression and Random Forest using scikit-learn's Pipeline.</p>
-</li>
+<ol start="8">
+<li>Pipeline Construction
+8.1 Introduction
+The pipeline combines preprocessing and model training automatically, ensuring consistent data handling and applying the best methods to both models.</li>
 </ol>
 </div>
 </div>
@@ -9370,11 +9346,11 @@ Random Forest</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [265]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [323]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
-<span class="c1"># Step 11.2: Create the Logistic Regression Pipeline</span>
+<span class="c1"># Create the Logistic Regression Pipeline</span>
 <span class="n">logistic_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
     <span class="p">(</span><span class="s2">"preprocessor"</span><span class="p">,</span> <span class="n">preprocessor_B</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">"model"</span><span class="p">,</span> <span class="n">LogisticRegression</span><span class="p">(</span>
@@ -9427,10 +9403,10 @@ Random Forest</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [266]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [324]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 10.2 : Create the Random Forest Pipeline</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create the Random Forest Pipeline</span>
 <span class="n">rf_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
     <span class="p">(</span><span class="s2">"preprocessor"</span><span class="p">,</span> <span class="n">preprocessor_B</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">"model"</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span>
@@ -9485,7 +9461,7 @@ Random Forest</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Step 10.3: What Makes Pipeline Better?</p>
+<p>What Makes Pipeline Better?</p>
 <p>There are various advantages to use a pipeline in project:</p>
 <ol>
 <li><p>Both Preprocessing and model training are combined into one workflow.</p>
@@ -9509,12 +9485,11 @@ Random Forest</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="11">
+<ol start="9">
 <li>Hyperparameter Tuning using GridSearchCV
-11.1 Introduction (Markdown Cell)</li>
+9.1 Introduction</li>
 </ol>
-<p>Machine learning models have parameters that control how they learn from data. These parameters, called hyperparameters, are set before training the model and can significantly affect its performance. Instead of selecting these values manually, GridSearchCV is used to automatically test different combinations of hyperparameters and identify the combination that produces the best performance.</p>
-<p>In this project, GridSearchCV is applied to both Logistic Regression and Random Forest. Five-fold cross-validation is used to ensure that the selected model performs consistently across different subsets of the training data.</p>
+<p>GridSearchCV automatically tests different hyperparameters for logistic regression and Random Forest, using five-fold validation to find the best performing models.</p>
 </div>
 </div>
 </div>
@@ -9523,10 +9498,10 @@ Random Forest</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [267]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [325]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 11.2 Import GridSearchCV</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Import GridSearchCV</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">GridSearchCV</span>
 <span class="c1"># Hyperparameter grid for Logistic Regression</span>
@@ -9546,10 +9521,10 @@ Random Forest</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [268]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [326]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 11.3: Create GridSearchCV for Logistic Regression</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create GridSearchCV for Logistic Regression</span>
 <span class="n">grid_lr</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span>
     <span class="n">estimator</span><span class="o">=</span><span class="n">logistic_pipeline</span><span class="p">,</span>
     <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid_lr</span><span class="p">,</span>
@@ -9567,10 +9542,10 @@ Random Forest</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [269]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [327]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 11.4: Train Logistic Regression</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Train Logistic Regression</span>
 <span class="n">grid_lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -9582,9 +9557,9 @@ Random Forest</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[269]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[327]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<style>#sk-container-id-9 {
+<style>#sk-container-id-11 {
   /* Definition of color scheme common for light and dark mode */
   --sklearn-color-text: #000;
   --sklearn-color-text-muted: #666;
@@ -9615,15 +9590,15 @@ Random Forest</p>
   }
 }
 
-#sk-container-id-9 {
+#sk-container-id-11 {
   color: var(--sklearn-color-text);
 }
 
-#sk-container-id-9 pre {
+#sk-container-id-11 pre {
   padding: 0;
 }
 
-#sk-container-id-9 input.sk-hidden--visually {
+#sk-container-id-11 input.sk-hidden--visually {
   border: 0;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
@@ -9635,7 +9610,7 @@ Random Forest</p>
   width: 1px;
 }
 
-#sk-container-id-9 div.sk-dashed-wrapped {
+#sk-container-id-11 div.sk-dashed-wrapped {
   border: 1px dashed var(--sklearn-color-line);
   margin: 0 0.4em 0.5em 0.4em;
   box-sizing: border-box;
@@ -9643,7 +9618,7 @@ Random Forest</p>
   background-color: var(--sklearn-color-background);
 }
 
-#sk-container-id-9 div.sk-container {
+#sk-container-id-11 div.sk-container {
   /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
      but bootstrap.min.css set `[hidden] { display: none !important; }`
      so we also need the `!important` here to be able to override the
@@ -9653,7 +9628,7 @@ Random Forest</p>
   position: relative;
 }
 
-#sk-container-id-9 div.sk-text-repr-fallback {
+#sk-container-id-11 div.sk-text-repr-fallback {
   display: none;
 }
 
@@ -9669,14 +9644,14 @@ div.sk-item {
 
 /* Parallel-specific style estimator block */
 
-#sk-container-id-9 div.sk-parallel-item::after {
+#sk-container-id-11 div.sk-parallel-item::after {
   content: "";
   width: 100%;
   border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
   flex-grow: 1;
 }
 
-#sk-container-id-9 div.sk-parallel {
+#sk-container-id-11 div.sk-parallel {
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -9684,28 +9659,28 @@ div.sk-item {
   position: relative;
 }
 
-#sk-container-id-9 div.sk-parallel-item {
+#sk-container-id-11 div.sk-parallel-item {
   display: flex;
   flex-direction: column;
 }
 
-#sk-container-id-9 div.sk-parallel-item:first-child::after {
+#sk-container-id-11 div.sk-parallel-item:first-child::after {
   align-self: flex-end;
   width: 50%;
 }
 
-#sk-container-id-9 div.sk-parallel-item:last-child::after {
+#sk-container-id-11 div.sk-parallel-item:last-child::after {
   align-self: flex-start;
   width: 50%;
 }
 
-#sk-container-id-9 div.sk-parallel-item:only-child::after {
+#sk-container-id-11 div.sk-parallel-item:only-child::after {
   width: 0;
 }
 
 /* Serial-specific style estimator block */
 
-#sk-container-id-9 div.sk-serial {
+#sk-container-id-11 div.sk-serial {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9723,14 +9698,14 @@ clickable and can be expanded/collapsed.
 
 /* Pipeline and ColumnTransformer style (default) */
 
-#sk-container-id-9 div.sk-toggleable {
+#sk-container-id-11 div.sk-toggleable {
   /* Default theme specific background. It is overwritten whether we have a
   specific estimator or a Pipeline/ColumnTransformer */
   background-color: var(--sklearn-color-background);
 }
 
 /* Toggleable label */
-#sk-container-id-9 label.sk-toggleable__label {
+#sk-container-id-11 label.sk-toggleable__label {
   cursor: pointer;
   display: flex;
   width: 100%;
@@ -9743,13 +9718,13 @@ clickable and can be expanded/collapsed.
   gap: 0.5em;
 }
 
-#sk-container-id-9 label.sk-toggleable__label .caption {
+#sk-container-id-11 label.sk-toggleable__label .caption {
   font-size: 0.6rem;
   font-weight: lighter;
   color: var(--sklearn-color-text-muted);
 }
 
-#sk-container-id-9 label.sk-toggleable__label-arrow:before {
+#sk-container-id-11 label.sk-toggleable__label-arrow:before {
   /* Arrow on the left of the label */
   content: "▸";
   float: left;
@@ -9757,25 +9732,25 @@ clickable and can be expanded/collapsed.
   color: var(--sklearn-color-icon);
 }
 
-#sk-container-id-9 label.sk-toggleable__label-arrow:hover:before {
+#sk-container-id-11 label.sk-toggleable__label-arrow:hover:before {
   color: var(--sklearn-color-text);
 }
 
 /* Toggleable content - dropdown */
 
-#sk-container-id-9 div.sk-toggleable__content {
+#sk-container-id-11 div.sk-toggleable__content {
   display: none;
   text-align: left;
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-9 div.sk-toggleable__content.fitted {
+#sk-container-id-11 div.sk-toggleable__content.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-9 div.sk-toggleable__content pre {
+#sk-container-id-11 div.sk-toggleable__content pre {
   margin: 0.2em;
   border-radius: 0.25em;
   color: var(--sklearn-color-text);
@@ -9783,79 +9758,79 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-9 div.sk-toggleable__content.fitted pre {
+#sk-container-id-11 div.sk-toggleable__content.fitted pre {
   /* unfitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-9 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+#sk-container-id-11 input.sk-toggleable__control:checked~div.sk-toggleable__content {
   /* Expand drop-down */
   display: block;
   width: 100%;
   overflow: visible;
 }
 
-#sk-container-id-9 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+#sk-container-id-11 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
   content: "▾";
 }
 
 /* Pipeline/ColumnTransformer-specific style */
 
-#sk-container-id-9 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-11 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-9 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-11 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator-specific style */
 
 /* Colorize estimator box */
-#sk-container-id-9 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-11 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-9 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-11 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
-#sk-container-id-9 div.sk-label label.sk-toggleable__label,
-#sk-container-id-9 div.sk-label label {
+#sk-container-id-11 div.sk-label label.sk-toggleable__label,
+#sk-container-id-11 div.sk-label label {
   /* The background is the default theme color */
   color: var(--sklearn-color-text-on-default-background);
 }
 
 /* On hover, darken the color of the background */
-#sk-container-id-9 div.sk-label:hover label.sk-toggleable__label {
+#sk-container-id-11 div.sk-label:hover label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
 /* Label box, darken color on hover, fitted */
-#sk-container-id-9 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+#sk-container-id-11 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator label */
 
-#sk-container-id-9 div.sk-label label {
+#sk-container-id-11 div.sk-label label {
   font-family: monospace;
   font-weight: bold;
   display: inline-block;
   line-height: 1.2em;
 }
 
-#sk-container-id-9 div.sk-label-container {
+#sk-container-id-11 div.sk-label-container {
   text-align: center;
 }
 
 /* Estimator-specific */
-#sk-container-id-9 div.sk-estimator {
+#sk-container-id-11 div.sk-estimator {
   font-family: monospace;
   border: 1px dotted var(--sklearn-color-border-box);
   border-radius: 0.25em;
@@ -9865,18 +9840,18 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-9 div.sk-estimator.fitted {
+#sk-container-id-11 div.sk-estimator.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
 /* on hover */
-#sk-container-id-9 div.sk-estimator:hover {
+#sk-container-id-11 div.sk-estimator:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-9 div.sk-estimator.fitted:hover {
+#sk-container-id-11 div.sk-estimator.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
@@ -9964,7 +9939,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 /* "?"-specific style due to the `<a>` HTML tag */
 
-#sk-container-id-9 a.estimator_doc_link {
+#sk-container-id-11 a.estimator_doc_link {
   float: right;
   font-size: 1rem;
   line-height: 1em;
@@ -9979,21 +9954,21 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   border: var(--sklearn-color-unfitted-level-1) 1pt solid;
 }
 
-#sk-container-id-9 a.estimator_doc_link.fitted {
+#sk-container-id-11 a.estimator_doc_link.fitted {
   /* fitted */
   border: var(--sklearn-color-fitted-level-1) 1pt solid;
   color: var(--sklearn-color-fitted-level-1);
 }
 
 /* On hover */
-#sk-container-id-9 a.estimator_doc_link:hover {
+#sk-container-id-11 a.estimator_doc_link:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-3);
   color: var(--sklearn-color-background);
   text-decoration: none;
 }
 
-#sk-container-id-9 a.estimator_doc_link.fitted:hover {
+#sk-container-id-11 a.estimator_doc_link.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-3);
 }
@@ -10061,7 +10036,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     height: 14px;
     cursor: pointer;
 }
-</style><body><div class="sk-top-container" id="sk-container-id-9"><div class="sk-text-repr-fallback"><pre>GridSearchCV(cv=5,
+</style><body><div class="sk-top-container" id="sk-container-id-11"><div class="sk-text-repr-fallback"><pre>GridSearchCV(cv=5,
              estimator=Pipeline(steps=[('preprocessor',
                                         ColumnTransformer(transformers=[('num',
                                                                          Pipeline(steps=[('imputer',
@@ -10097,7 +10072,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
              param_grid={'model__C': [0.1, 1, 10],
                          'model__class_weight': [None, 'balanced'],
                          'model__solver': ['liblinear', 'lbfgs']},
-             scoring='f1')</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-81" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-81"><div><div>GridSearchCV</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GridSearchCV.html" rel="noreferrer" target="_blank">?<span>Documentation for GridSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+             scoring='f1')</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-101" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-101"><div><div>GridSearchCV</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GridSearchCV.html" rel="noreferrer" target="_blank">?<span>Documentation for GridSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -10167,7 +10142,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </table>
 </details>
 </div>
-</div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-82" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-82"><div><div>best_estimator_: Pipeline</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___"></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-83" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-83"><div><div>preprocessor: ColumnTransformer</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.compose.ColumnTransformer.html" rel="noreferrer" target="_blank">?<span>Documentation for preprocessor: ColumnTransformer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__">
+</div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-102" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-102"><div><div>best_estimator_: Pipeline</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___"></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-103" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-103"><div><div>preprocessor: ColumnTransformer</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.compose.ColumnTransformer.html" rel="noreferrer" target="_blank">?<span>Documentation for preprocessor: ColumnTransformer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -10225,7 +10200,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </table>
 </details>
 </div>
-</div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-84" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-84"><div><div>num</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__num__"><pre>['age', 'balance', 'day', 'duration', 'campaign', 'pdays', 'previous']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-85" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-85"><div><div>SimpleImputer</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.impute.SimpleImputer.html" rel="noreferrer" target="_blank">?<span>Documentation for SimpleImputer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__num__imputer__">
+</div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-104" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-104"><div><div>num</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__num__"><pre>['age', 'balance', 'day', 'duration', 'campaign', 'pdays', 'previous']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-105" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-105"><div><div>SimpleImputer</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.impute.SimpleImputer.html" rel="noreferrer" target="_blank">?<span>Documentation for SimpleImputer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__num__imputer__">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -10271,7 +10246,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </table>
 </details>
 </div>
-</div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-86" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-86"><div><div>StandardScaler</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.StandardScaler.html" rel="noreferrer" target="_blank">?<span>Documentation for StandardScaler</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__num__scaler__">
+</div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-106" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-106"><div><div>StandardScaler</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.StandardScaler.html" rel="noreferrer" target="_blank">?<span>Documentation for StandardScaler</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__num__scaler__">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -10299,7 +10274,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </table>
 </details>
 </div>
-</div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-87" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-87"><div><div>cat</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__cat__"><pre>['job', 'marital', 'education', 'default', 'housing', 'loan', 'contact', 'month', 'poutcome']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-88" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-88"><div><div>SimpleImputer</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.impute.SimpleImputer.html" rel="noreferrer" target="_blank">?<span>Documentation for SimpleImputer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__cat__imputer__">
+</div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-107" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-107"><div><div>cat</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__cat__"><pre>['job', 'marital', 'education', 'default', 'housing', 'loan', 'contact', 'month', 'poutcome']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-108" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-108"><div><div>SimpleImputer</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.impute.SimpleImputer.html" rel="noreferrer" target="_blank">?<span>Documentation for SimpleImputer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__cat__imputer__">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -10345,7 +10320,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </table>
 </details>
 </div>
-</div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-89" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-89"><div><div>OneHotEncoder</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.OneHotEncoder.html" rel="noreferrer" target="_blank">?<span>Documentation for OneHotEncoder</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__cat__encoder__">
+</div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-109" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-109"><div><div>OneHotEncoder</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.OneHotEncoder.html" rel="noreferrer" target="_blank">?<span>Documentation for OneHotEncoder</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__cat__encoder__">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -10403,7 +10378,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </table>
 </details>
 </div>
-</div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-90" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-90"><div><div>LogisticRegression</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LogisticRegression.html" rel="noreferrer" target="_blank">?<span>Documentation for LogisticRegression</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___model__">
+</div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-110" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-110"><div><div>LogisticRegression</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LogisticRegression.html" rel="noreferrer" target="_blank">?<span>Documentation for LogisticRegression</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___model__">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -10555,7 +10530,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [270]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [328]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># display best parameters</span>
@@ -10593,7 +10568,7 @@ Best Cross-validation F1 score:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Logistic-Regression-Hyperparameter-Interpretation">Logistic Regression Hyperparameter Interpretation<a class="anchor-link" href="#Logistic-Regression-Hyperparameter-Interpretation">¶</a></h3><p>The optimal Logistic Regression model selected an appropriate regularization strength (<code>C</code>) and the L2 regularization penalty. Regularization controls model complexity by preventing excessively large coefficients, thereby improving the model's ability to generalize to unseen data. The selected solver efficiently optimized the model parameters and achieved the highest cross-validation performance.</p>
+<h3 id="Logistic-Regression-Hyperparameter-Interpretation">Logistic Regression Hyperparameter Interpretation<a class="anchor-link" href="#Logistic-Regression-Hyperparameter-Interpretation">¶</a></h3><p>The best Logistic Regression settings improved performance by balancing model complexity, preventing overfitting and achieving strong cross-validation results.</p>
 </div>
 </div>
 </div>
@@ -10604,8 +10579,7 @@ Best Cross-validation F1 score:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Interpretation-of-GridSearchCV-Results">Interpretation of GridSearchCV Results<a class="anchor-link" href="#Interpretation-of-GridSearchCV-Results">¶</a></h3><p>GridSearchCV was applied to identify the optimal hyperparameter combination for each machine learning model using cross-validation. The search evaluated multiple parameter combinations and selected the configuration that achieved the highest average cross-validation score.</p>
-<p>The best hyperparameters produced a better balance between model complexity and predictive performance, reducing the likelihood of overfitting or underfitting. These optimized parameter values were therefore used to train the final models evaluated in the next section.</p>
+<h3 id="Interpretation-of-GridSearchCV-Results">Interpretation of GridSearchCV Results<a class="anchor-link" href="#Interpretation-of-GridSearchCV-Results">¶</a></h3><p>GridSearchCV found the best model settings by testing different options and selecting the one with highest performance.</p>
 </div>
 </div>
 </div>
@@ -10614,10 +10588,10 @@ Best Cross-validation F1 score:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [271]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [329]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 11.5: Hyperparameter Grid for Random Forest</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Hyperparameter Grid for Random Forest</span>
 <span class="n">param_grid_rf</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"model__n_estimators"</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span>
     <span class="s2">"model__max_depth"</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
@@ -10633,10 +10607,10 @@ Best Cross-validation F1 score:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [272]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [330]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 11.6: Create GridSearchCV for Random Forest</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create GridSearchCV for Random Forest</span>
 <span class="n">grid_rf</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span>
     <span class="n">estimator</span><span class="o">=</span><span class="n">rf_pipeline</span><span class="p">,</span>
     <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid_rf</span><span class="p">,</span>
@@ -10654,7 +10628,7 @@ Best Cross-validation F1 score:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [273]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [331]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># train random set</span>
@@ -10669,9 +10643,9 @@ Best Cross-validation F1 score:
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[273]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[331]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<style>#sk-container-id-10 {
+<style>#sk-container-id-12 {
   /* Definition of color scheme common for light and dark mode */
   --sklearn-color-text: #000;
   --sklearn-color-text-muted: #666;
@@ -10702,15 +10676,15 @@ Best Cross-validation F1 score:
   }
 }
 
-#sk-container-id-10 {
+#sk-container-id-12 {
   color: var(--sklearn-color-text);
 }
 
-#sk-container-id-10 pre {
+#sk-container-id-12 pre {
   padding: 0;
 }
 
-#sk-container-id-10 input.sk-hidden--visually {
+#sk-container-id-12 input.sk-hidden--visually {
   border: 0;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
@@ -10722,7 +10696,7 @@ Best Cross-validation F1 score:
   width: 1px;
 }
 
-#sk-container-id-10 div.sk-dashed-wrapped {
+#sk-container-id-12 div.sk-dashed-wrapped {
   border: 1px dashed var(--sklearn-color-line);
   margin: 0 0.4em 0.5em 0.4em;
   box-sizing: border-box;
@@ -10730,7 +10704,7 @@ Best Cross-validation F1 score:
   background-color: var(--sklearn-color-background);
 }
 
-#sk-container-id-10 div.sk-container {
+#sk-container-id-12 div.sk-container {
   /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
      but bootstrap.min.css set `[hidden] { display: none !important; }`
      so we also need the `!important` here to be able to override the
@@ -10740,7 +10714,7 @@ Best Cross-validation F1 score:
   position: relative;
 }
 
-#sk-container-id-10 div.sk-text-repr-fallback {
+#sk-container-id-12 div.sk-text-repr-fallback {
   display: none;
 }
 
@@ -10756,14 +10730,14 @@ div.sk-item {
 
 /* Parallel-specific style estimator block */
 
-#sk-container-id-10 div.sk-parallel-item::after {
+#sk-container-id-12 div.sk-parallel-item::after {
   content: "";
   width: 100%;
   border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
   flex-grow: 1;
 }
 
-#sk-container-id-10 div.sk-parallel {
+#sk-container-id-12 div.sk-parallel {
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -10771,28 +10745,28 @@ div.sk-item {
   position: relative;
 }
 
-#sk-container-id-10 div.sk-parallel-item {
+#sk-container-id-12 div.sk-parallel-item {
   display: flex;
   flex-direction: column;
 }
 
-#sk-container-id-10 div.sk-parallel-item:first-child::after {
+#sk-container-id-12 div.sk-parallel-item:first-child::after {
   align-self: flex-end;
   width: 50%;
 }
 
-#sk-container-id-10 div.sk-parallel-item:last-child::after {
+#sk-container-id-12 div.sk-parallel-item:last-child::after {
   align-self: flex-start;
   width: 50%;
 }
 
-#sk-container-id-10 div.sk-parallel-item:only-child::after {
+#sk-container-id-12 div.sk-parallel-item:only-child::after {
   width: 0;
 }
 
 /* Serial-specific style estimator block */
 
-#sk-container-id-10 div.sk-serial {
+#sk-container-id-12 div.sk-serial {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10810,14 +10784,14 @@ clickable and can be expanded/collapsed.
 
 /* Pipeline and ColumnTransformer style (default) */
 
-#sk-container-id-10 div.sk-toggleable {
+#sk-container-id-12 div.sk-toggleable {
   /* Default theme specific background. It is overwritten whether we have a
   specific estimator or a Pipeline/ColumnTransformer */
   background-color: var(--sklearn-color-background);
 }
 
 /* Toggleable label */
-#sk-container-id-10 label.sk-toggleable__label {
+#sk-container-id-12 label.sk-toggleable__label {
   cursor: pointer;
   display: flex;
   width: 100%;
@@ -10830,13 +10804,13 @@ clickable and can be expanded/collapsed.
   gap: 0.5em;
 }
 
-#sk-container-id-10 label.sk-toggleable__label .caption {
+#sk-container-id-12 label.sk-toggleable__label .caption {
   font-size: 0.6rem;
   font-weight: lighter;
   color: var(--sklearn-color-text-muted);
 }
 
-#sk-container-id-10 label.sk-toggleable__label-arrow:before {
+#sk-container-id-12 label.sk-toggleable__label-arrow:before {
   /* Arrow on the left of the label */
   content: "▸";
   float: left;
@@ -10844,25 +10818,25 @@ clickable and can be expanded/collapsed.
   color: var(--sklearn-color-icon);
 }
 
-#sk-container-id-10 label.sk-toggleable__label-arrow:hover:before {
+#sk-container-id-12 label.sk-toggleable__label-arrow:hover:before {
   color: var(--sklearn-color-text);
 }
 
 /* Toggleable content - dropdown */
 
-#sk-container-id-10 div.sk-toggleable__content {
+#sk-container-id-12 div.sk-toggleable__content {
   display: none;
   text-align: left;
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-10 div.sk-toggleable__content.fitted {
+#sk-container-id-12 div.sk-toggleable__content.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-10 div.sk-toggleable__content pre {
+#sk-container-id-12 div.sk-toggleable__content pre {
   margin: 0.2em;
   border-radius: 0.25em;
   color: var(--sklearn-color-text);
@@ -10870,79 +10844,79 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-10 div.sk-toggleable__content.fitted pre {
+#sk-container-id-12 div.sk-toggleable__content.fitted pre {
   /* unfitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-10 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+#sk-container-id-12 input.sk-toggleable__control:checked~div.sk-toggleable__content {
   /* Expand drop-down */
   display: block;
   width: 100%;
   overflow: visible;
 }
 
-#sk-container-id-10 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+#sk-container-id-12 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
   content: "▾";
 }
 
 /* Pipeline/ColumnTransformer-specific style */
 
-#sk-container-id-10 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-12 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-10 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-12 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator-specific style */
 
 /* Colorize estimator box */
-#sk-container-id-10 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-12 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-10 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-12 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
-#sk-container-id-10 div.sk-label label.sk-toggleable__label,
-#sk-container-id-10 div.sk-label label {
+#sk-container-id-12 div.sk-label label.sk-toggleable__label,
+#sk-container-id-12 div.sk-label label {
   /* The background is the default theme color */
   color: var(--sklearn-color-text-on-default-background);
 }
 
 /* On hover, darken the color of the background */
-#sk-container-id-10 div.sk-label:hover label.sk-toggleable__label {
+#sk-container-id-12 div.sk-label:hover label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
 /* Label box, darken color on hover, fitted */
-#sk-container-id-10 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+#sk-container-id-12 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator label */
 
-#sk-container-id-10 div.sk-label label {
+#sk-container-id-12 div.sk-label label {
   font-family: monospace;
   font-weight: bold;
   display: inline-block;
   line-height: 1.2em;
 }
 
-#sk-container-id-10 div.sk-label-container {
+#sk-container-id-12 div.sk-label-container {
   text-align: center;
 }
 
 /* Estimator-specific */
-#sk-container-id-10 div.sk-estimator {
+#sk-container-id-12 div.sk-estimator {
   font-family: monospace;
   border: 1px dotted var(--sklearn-color-border-box);
   border-radius: 0.25em;
@@ -10952,18 +10926,18 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-10 div.sk-estimator.fitted {
+#sk-container-id-12 div.sk-estimator.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
 /* on hover */
-#sk-container-id-10 div.sk-estimator:hover {
+#sk-container-id-12 div.sk-estimator:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-10 div.sk-estimator.fitted:hover {
+#sk-container-id-12 div.sk-estimator.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
@@ -11051,7 +11025,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 /* "?"-specific style due to the `<a>` HTML tag */
 
-#sk-container-id-10 a.estimator_doc_link {
+#sk-container-id-12 a.estimator_doc_link {
   float: right;
   font-size: 1rem;
   line-height: 1em;
@@ -11066,21 +11040,21 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   border: var(--sklearn-color-unfitted-level-1) 1pt solid;
 }
 
-#sk-container-id-10 a.estimator_doc_link.fitted {
+#sk-container-id-12 a.estimator_doc_link.fitted {
   /* fitted */
   border: var(--sklearn-color-fitted-level-1) 1pt solid;
   color: var(--sklearn-color-fitted-level-1);
 }
 
 /* On hover */
-#sk-container-id-10 a.estimator_doc_link:hover {
+#sk-container-id-12 a.estimator_doc_link:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-3);
   color: var(--sklearn-color-background);
   text-decoration: none;
 }
 
-#sk-container-id-10 a.estimator_doc_link.fitted:hover {
+#sk-container-id-12 a.estimator_doc_link.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-3);
 }
@@ -11148,7 +11122,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     height: 14px;
     cursor: pointer;
 }
-</style><body><div class="sk-top-container" id="sk-container-id-10"><div class="sk-text-repr-fallback"><pre>GridSearchCV(cv=5,
+</style><body><div class="sk-top-container" id="sk-container-id-12"><div class="sk-text-repr-fallback"><pre>GridSearchCV(cv=5,
              estimator=Pipeline(steps=[('preprocessor',
                                         ColumnTransformer(transformers=[('num',
                                                                          Pipeline(steps=[('imputer',
@@ -11183,7 +11157,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
              param_grid={'model__max_depth': [10, 20, None],
                          'model__min_samples_split': [2, 5],
                          'model__n_estimators': [100, 200]},
-             scoring='f1')</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-91" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-91"><div><div>GridSearchCV</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GridSearchCV.html" rel="noreferrer" target="_blank">?<span>Documentation for GridSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+             scoring='f1')</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-111" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-111"><div><div>GridSearchCV</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GridSearchCV.html" rel="noreferrer" target="_blank">?<span>Documentation for GridSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -11253,7 +11227,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </table>
 </details>
 </div>
-</div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-92" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-92"><div><div>best_estimator_: Pipeline</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___"></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-93" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-93"><div><div>preprocessor: ColumnTransformer</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.compose.ColumnTransformer.html" rel="noreferrer" target="_blank">?<span>Documentation for preprocessor: ColumnTransformer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__">
+</div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-112" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-112"><div><div>best_estimator_: Pipeline</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___"></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-113" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-113"><div><div>preprocessor: ColumnTransformer</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.compose.ColumnTransformer.html" rel="noreferrer" target="_blank">?<span>Documentation for preprocessor: ColumnTransformer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -11311,7 +11285,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </table>
 </details>
 </div>
-</div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-94" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-94"><div><div>num</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__num__"><pre>['age', 'balance', 'day', 'duration', 'campaign', 'pdays', 'previous']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-95" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-95"><div><div>SimpleImputer</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.impute.SimpleImputer.html" rel="noreferrer" target="_blank">?<span>Documentation for SimpleImputer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__num__imputer__">
+</div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-114" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-114"><div><div>num</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__num__"><pre>['age', 'balance', 'day', 'duration', 'campaign', 'pdays', 'previous']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-115" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-115"><div><div>SimpleImputer</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.impute.SimpleImputer.html" rel="noreferrer" target="_blank">?<span>Documentation for SimpleImputer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__num__imputer__">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -11357,7 +11331,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </table>
 </details>
 </div>
-</div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-96" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-96"><div><div>StandardScaler</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.StandardScaler.html" rel="noreferrer" target="_blank">?<span>Documentation for StandardScaler</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__num__scaler__">
+</div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-116" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-116"><div><div>StandardScaler</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.StandardScaler.html" rel="noreferrer" target="_blank">?<span>Documentation for StandardScaler</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__num__scaler__">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -11385,7 +11359,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </table>
 </details>
 </div>
-</div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-97" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-97"><div><div>cat</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__cat__"><pre>['job', 'marital', 'education', 'default', 'housing', 'loan', 'contact', 'month', 'poutcome']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-98" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-98"><div><div>SimpleImputer</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.impute.SimpleImputer.html" rel="noreferrer" target="_blank">?<span>Documentation for SimpleImputer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__cat__imputer__">
+</div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-117" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-117"><div><div>cat</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__cat__"><pre>['job', 'marital', 'education', 'default', 'housing', 'loan', 'contact', 'month', 'poutcome']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-118" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-118"><div><div>SimpleImputer</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.impute.SimpleImputer.html" rel="noreferrer" target="_blank">?<span>Documentation for SimpleImputer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__cat__imputer__">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -11431,7 +11405,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </table>
 </details>
 </div>
-</div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-99" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-99"><div><div>OneHotEncoder</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.OneHotEncoder.html" rel="noreferrer" target="_blank">?<span>Documentation for OneHotEncoder</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__cat__encoder__">
+</div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-119" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-119"><div><div>OneHotEncoder</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.OneHotEncoder.html" rel="noreferrer" target="_blank">?<span>Documentation for OneHotEncoder</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___preprocessor__cat__encoder__">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -11489,7 +11463,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </table>
 </details>
 </div>
-</div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-100" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-100"><div><div>RandomForestClassifier</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.ensemble.RandomForestClassifier.html" rel="noreferrer" target="_blank">?<span>Documentation for RandomForestClassifier</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___model__">
+</div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-120" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-120"><div><div>RandomForestClassifier</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.ensemble.RandomForestClassifier.html" rel="noreferrer" target="_blank">?<span>Documentation for RandomForestClassifier</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___model__">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -11665,10 +11639,10 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [274]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [332]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 11.7: Display Best Parameters</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Display Best Parameters</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Best Parameters:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">grid_rf</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
 <span class="c1"># display best score of cross validation</span>
@@ -11702,7 +11676,7 @@ Best Cross-validation F1-score:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Random-Forest-Hyperparameter-Interpretation">Random Forest Hyperparameter Interpretation<a class="anchor-link" href="#Random-Forest-Hyperparameter-Interpretation">¶</a></h3><p>GridSearchCV selected the combination of tree depth, number of trees, and minimum samples required for splitting that produced the best cross-validation performance. Limiting tree depth helps prevent overfitting, while increasing the number of trees generally improves prediction stability and reduces model variance.</p>
+<p>Result: GridSearchCV chose the best tree depth, number of trees and minimum samples for splitting. Limiting depth stops overfitting, while more trees make predictions more stable.</p>
 </div>
 </div>
 </div>
@@ -11711,7 +11685,7 @@ Best Cross-validation F1-score:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [275]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [333]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 11.8: Compare the Tuned Models</span>
@@ -11736,7 +11710,7 @@ Best Cross-validation F1-score:
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[275]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[333]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -11779,17 +11753,6 @@ Best Cross-validation F1-score:
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=89a75ddb">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Hyperparameter-Tuning-Summary">Hyperparameter Tuning Summary<a class="anchor-link" href="#Hyperparameter-Tuning-Summary">¶</a></h3><p>Hyperparameter tuning improved both machine learning models by systematically evaluating different parameter combinations. The optimized models achieved better cross-validation performance than the default configurations, demonstrating the importance of parameter tuning in improving predictive accuracy and model generalization.</p>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8c935777">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -11807,11 +11770,9 @@ Best Cross-validation F1-score:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="13">
-<li>Model Evaluation
-13.1 Introduction (Markdown Cell)</li>
+<ol start="10">
+<li>Model evaluation checks hat how well the best Logistic Regression and Random Forest models work on new data. Multiple metrics are used because the data is unbalanced.</li>
 </ol>
-<p>Model evaluation is the process of measuring how well the trained machine learning models perform on unseen data. In this project, the best Logistic Regression model and the best Random Forest model obtained through GridSearchCV are evaluated using the test dataset. Several evaluation metrics are used, including Accuracy, Precision, Recall, F1-score, Confusion Matrix, ROC-AUC, and Feature Importance. Using multiple metrics provides a more complete understanding of each model's performance, especially because the target variable is imbalanced.</p>
 </div>
 </div>
 </div>
@@ -11820,7 +11781,7 @@ Best Cross-validation F1-score:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [276]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [334]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Get the best models from GridSearchCV</span>
@@ -11836,7 +11797,7 @@ Best Cross-validation F1-score:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [277]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [335]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Logistic Regression predictions</span>
@@ -11856,7 +11817,7 @@ Best Cross-validation F1-score:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [278]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [336]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># import evaluation matrics</span>
@@ -11880,7 +11841,7 @@ Best Cross-validation F1-score:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [279]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [337]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># accuracy score</span>
@@ -11918,7 +11879,7 @@ Random Forest Accuracy:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [280]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [338]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># precision</span>
@@ -11956,7 +11917,7 @@ Random Forest Precision:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [281]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [339]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># recall</span>
@@ -11994,7 +11955,7 @@ Random Forest Recall:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [282]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [340]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Logistic Regression F1-score:"</span><span class="p">)</span>
@@ -12031,7 +11992,7 @@ Random Forest F1-score:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [283]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [341]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Logistic Regression"</span><span class="p">)</span>
@@ -12083,7 +12044,7 @@ weighted avg       0.90      0.90      0.90      9043
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">¶</a></h3><p>The classification report evaluates the predictive performance of the trained model using Precision, Recall, F1-score, and Accuracy. The results indicate that the model correctly classifies the majority of customer outcomes while maintaining a good balance between precision and recall. The F1-score confirms that the model performs consistently across both classes, making it suitable for predicting customer subscription behaviour.</p>
+<p>Result: The classification report shows the model correctly predicts most customer results. It balances precision and recall and made it reliable for subscription predictions.</p>
 </div>
 </div>
 </div>
@@ -12092,7 +12053,7 @@ weighted avg       0.90      0.90      0.90      9043
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [284]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [342]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConfusionMatrixDisplay</span>
@@ -12113,9 +12074,9 @@ weighted avg       0.90      0.90      0.90      9043
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[284]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[342]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay at 0x255934f0e50&gt;</pre>
+<pre>&lt;sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay at 0x25596cb8aa0&gt;</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -12133,7 +12094,7 @@ weighted avg       0.90      0.90      0.90      9043
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Interpretation-(Logistic-Regression)">Interpretation (Logistic Regression)<a class="anchor-link" href="#Interpretation-(Logistic-Regression)">¶</a></h3><p>The confusion matrix for Logistic Regression shows that the model correctly classified most customers into the subscribed and non-subscribed categories. The relatively small number of false positives and false negatives indicates that the model provides reliable predictions. The balanced classification performance demonstrates that Logistic Regression effectively models the relationship between customer characteristics and term deposit subscription.</p>
+<p>Result: The Logistic Regression confusion matrix shows that most customers were correctly classified. Few mistakes mean the model gives reliable predictions and works well.</p>
 </div>
 </div>
 </div>
@@ -12142,7 +12103,7 @@ weighted avg       0.90      0.90      0.90      9043
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [285]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [343]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">ConfusionMatrixDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span>
@@ -12161,9 +12122,9 @@ weighted avg       0.90      0.90      0.90      9043
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[285]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[343]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay at 0x255934f1350&gt;</pre>
+<pre>&lt;sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay at 0x255930b5040&gt;</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -12181,7 +12142,7 @@ weighted avg       0.90      0.90      0.90      9043
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Interpretation-(Random-Forest)">Interpretation (Random Forest)<a class="anchor-link" href="#Interpretation-(Random-Forest)">¶</a></h3><p>The Random Forest confusion matrix indicates strong predictive performance, with a high number of correctly classified observations. Compared with Logistic Regression, the Random Forest model produced fewer classification errors, demonstrating its ability to capture more complex relationships within the dataset. This contributes to its improved overall predictive performance.</p>
+<p>Result: The Random Forest confusion matrix shows that many correct predictions and fewer mistakes than Logistic Regression. It handles complex patterns better and performs stronger.</p>
 </div>
 </div>
 </div>
@@ -12190,7 +12151,7 @@ weighted avg       0.90      0.90      0.90      9043
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [286]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [344]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># ROC curv and AUC</span>
@@ -12215,9 +12176,9 @@ weighted avg       0.90      0.90      0.90      9043
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[286]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[344]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;sklearn.metrics._plot.roc_curve.RocCurveDisplay at 0x255934f0f50&gt;</pre>
+<pre>&lt;sklearn.metrics._plot.roc_curve.RocCurveDisplay at 0x255930b7980&gt;</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -12239,12 +12200,10 @@ weighted avg       0.90      0.90      0.90      9043
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [287]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [345]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># ==============================</span>
-<span class="c1"># Step 13.8: Calculate ROC-AUC Scores</span>
-<span class="c1"># ==============================</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate ROC-AUC Scores</span>
 
 <span class="c1"># Calculate ROC-AUC score for Logistic Regression</span>
 <span class="n">roc_auc_lr</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span>
@@ -12267,12 +12226,10 @@ weighted avg       0.90      0.90      0.90      9043
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [288]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [346]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># ==============================</span>
-<span class="c1"># Display ROC-AUC Scores</span>
-<span class="c1"># ==============================</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Display ROC-AUC Scores</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Logistic Regression ROC-AUC:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">roc_auc_lr</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -12308,13 +12265,10 @@ Random Forest ROC-AUC:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [289]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [347]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># ==============================</span>
-<span class="c1"># Compare ROC-AUC Scores</span>
-<span class="c1"># ==============================</span>
-
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Compare ROC-AUC Scores</span>
 <span class="n">roc_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
     <span class="s2">"Model"</span><span class="p">:</span> <span class="p">[</span>
         <span class="s2">"Logistic Regression"</span><span class="p">,</span>
@@ -12337,7 +12291,7 @@ Random Forest ROC-AUC:
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[289]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[347]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -12386,8 +12340,8 @@ Random Forest ROC-AUC:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">¶</a></h3><p>The ROC-AUC score measures how well each model distinguishes between customers who subscribe to a term deposit and those who do not. A higher ROC-AUC score indicates better discrimination between the two classes.</p>
-<p>The results show that both models achieved strong discrimination performance. However, the Random Forest model produced a higher ROC-AUC score than Logistic Regression, indicating that it more effectively distinguishes between the positive and negative classes. This supports the conclusion that Random Forest provides superior overall predictive performance for this dataset.</p>
+<p>Result: The ROC-AUC score shows that how a model separates customers who will subscribe or not. A higher score means better separation.
+Random Forest scored higher than Logistic Regression, so it is better at telling the two groups apart and performs better overall.</p>
 </div>
 </div>
 </div>
@@ -12396,7 +12350,7 @@ Random Forest ROC-AUC:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [290]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [348]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#  Feature Importance (Random Forest Only)</span>
@@ -12427,7 +12381,7 @@ Random Forest ROC-AUC:
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[290]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[348]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -12516,7 +12470,7 @@ Random Forest ROC-AUC:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">¶</a></h3><p>The feature importance plot identifies the variables that contribute most to the prediction. Features with higher importance values have a greater influence on the model's decision-making process.</p>
+<p>Result: Features with higher importance values have a greater effect on the model decision-making process.</p>
 </div>
 </div>
 </div>
@@ -12525,7 +12479,7 @@ Random Forest ROC-AUC:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [291]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [349]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># MODELCOMPARISON TABLE</span>
@@ -12567,10 +12521,8 @@ Random Forest ROC-AUC:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Step 14: Interpretation</p>
-<p>The evaluation results show the performance of the tuned Logistic Regression and Random Forest models on the unseen test dataset. Accuracy provides an overall measure of correct predictions, while Precision, Recall, and F1-score give a better understanding of how well the models identify customers who subscribe to a term deposit. Since the dataset is imbalanced, these metrics are more informative than accuracy alone.</p>
-<p>The confusion matrix helps identify the number of correct and incorrect predictions, while the ROC-AUC score measures how effectively each model distinguishes between the two classes. The feature importance analysis from the Random Forest model identifies the variables that have the greatest influence on customer subscription decisions.</p>
-<p>By comparing all evaluation metrics together, it is possible to determine which model is more suitable for predicting customer responses in the Bank Marketing dataset.</p>
+<p>The results show that how the logistic regression and random forest models work on new data. Accuracy was giving only general information, but precision, recall and F1-score are more useful because the data is unbalanced.
+The confusion matrix shows correct and wrong predictions. ROC-AUC shows how  the models separate the two groups.</p>
 </div>
 </div>
 </div>
@@ -12581,22 +12533,13 @@ Random Forest ROC-AUC:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="15">
-<li>Conclusion
-In this project, I built a machine learning model to predict whether a bank customer will subscribe to a term deposit or not.
-The dataset was imbalanced because most customers said “no” and only a smaller number said “yes”. Because of this, I did not rely only on accuracy. I also used Precision, Recall, F1-score, and other metrics to better understand the model’s performance. I also used F1-score during hyperparameter tuning so the models could focus more on the minority class.
-I trained and compared two models: Logistic Regression and Random Forest.</li>
+<ol start="11">
+<li>Conclusion:</li>
 </ol>
-<p>Logistic Regression achieved about 85% accuracy. It was good at finding customers who said “yes” (high recall of about 81%), but its precision was lower.
-Random Forest achieved about 90% accuracy and a better overall F1-score (about 0.59). It gave a more balanced performance between precision and recall.</p>
-<p>The most important factors that influenced the prediction were:</p>
-<p>Duration of the call
-Account balance
-Customer’s age
-Day of contact
-Previous campaign result</p>
-<p>This means that longer phone calls and customers who had a positive response in the past are more likely to subscribe.
-Overall, the Random Forest model performed better for this problem. It can help the bank target the right customers and improve marketing efficiency. In the future, the results can be improved further by trying techniques such as SMOTE to handle the class imbalance even better.</p>
+<p>I created a model to predict if bank customers will subscribe to a term deposit. The data was imbalanced (mostly no), so I used precision, recall and F1-score instead of just accuracy.</p>
+<p>I compared Logistic Regression (85% accuracy, high recall) and Random Forest (90% accuracy, better F1-score of 0.59). Random Forest performed better overall.</p>
+<p>Top factors: call duration, account balance, age, contact day and previous campaign result. Longer calls and past positive responses increase the chance of subscription.
+Random Forest can help the bank target better customers.</p>
 </div>
 </div>
 </div>
