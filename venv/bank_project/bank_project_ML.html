@@ -9936,9 +9936,10 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="9.1-Logistic-Regression-Hyperparameters">9.1 Logistic Regression Hyperparameters<a class="anchor-link" href="#9.1-Logistic-Regression-Hyperparameters">¶</a></h3><ul>
-<li><strong>C</strong>: inverse regularization strength — smaller = simpler model, larger = fits training data more closely.</li>
-<li><strong>solver</strong>: optimization algorithm (<code>liblinear</code> vs <code>lbfgs</code>).</li>
-<li><strong>class_weight</strong>: <code>balanced</code> reweights classes to handle the ~88/12 imbalance.</li>
+<li><strong>C</strong>: opposite of strength. It means  smaller C = simpler model(stronger regularization).
+larger c =  training data fits more closely.</li>
+<li><strong>solver</strong>: Help to find best weight or coefficient (liblinear vs lbfgs).</li>
+<li><strong>class_weight</strong>: declared balance to handle imbalance dataset.</li>
 </ul>
 </div>
 </div>
@@ -9951,9 +9952,9 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="9.2--Random-Forest-Hyperparameters">9.2  Random Forest Hyperparameters<a class="anchor-link" href="#9.2--Random-Forest-Hyperparameters">¶</a></h3><ul>
-<li><strong>n_estimators</strong>: tree count — more trees = more stable, slower.</li>
-<li><strong>max_depth</strong>: tree depth — unrestricted risks overfitting.</li>
-<li><strong>min_samples_split</strong>: minimum samples to split a node — acts as a regularizer</li>
+<li><strong>n_estimators</strong>: It denoted tree count. Here, more trees means more stable and slower.</li>
+<li><strong>max_depth</strong>: How  much  deep a tree can grow.</li>
+<li><strong>min_samples_split</strong>: Minimum number of samples required to split the node firther</li>
 </ul>
 </div>
 </div>
@@ -12203,8 +12204,8 @@ Best Cross-validation F1-score:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Hyperparameter-Effects">Hyperparameter Effects<a class="anchor-link" href="#Hyperparameter-Effects">¶</a></h3><p>LR: F1 rose from C=0.1→1, then [plateaued/dropped] at C=10 — moderate regularization works best.
-RF: max_depth=20 outperformed 10; n_estimators=200 gave [marginal/no] gain over 100 for 2x cost.</p>
+<h3 id="Hyperparameter-Effects">Hyperparameter Effects<a class="anchor-link" href="#Hyperparameter-Effects">¶</a></h3><p>LR: F1 score becomes well when c raise from 0.1 to 1, then at  C=10 — moderate regularization works best.
+RF: Performed better than max_depth at 10 when it becomes double. I.E max/-depth = 20; n_estimators=200. It gave verly less improvement  over 100 trees at double cost.</p>
 </div>
 </div>
 </div>
@@ -12286,7 +12287,7 @@ RF: max_depth=20 outperformed 10; n_estimators=200 gave [marginal/no] gain over 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Observation: Random Forest achieved a higher F1 score (0.590784) compared to Logistic Regression (0.551395).</p>
+<p>Observation: Random Forest performed better(0.590784) over Logistic Regression (0.551395).</p>
 </div>
 </div>
 </div>
