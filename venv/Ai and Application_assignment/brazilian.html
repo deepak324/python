@@ -7517,14 +7517,17 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="M504-AI-and-Applications">M504 AI and Applications<a class="anchor-link" href="#M504-AI-and-Applications">¶</a></h2><p>Individual Project: Explanatory Data Analysis of Brazilian E-Commerce</p>
-<h3 id="1.-Business-Context">1. Business Context<a class="anchor-link" href="#1.-Business-Context">¶</a></h3><p><strong>Client:</strong> Olist, a Brazilian e-commerce marketplace that connects small businesses to customers across Brazil.</p>
-<p><strong>Dataset:</strong> This dataset contains about 100000 orders placed from 2016 to 2018. It includes details about the orders, customers, products, sellers, payments, shipping costs and customer reviews.</p>
+<h2 id="M504-AI-and-Applications">M504 AI and Applications<a class="anchor-link" href="#M504-AI-and-Applications">¶</a></h2><p><strong>Student name:</strong> Deepak Sindhu
+<strong>Module:</strong> M504 AI and Applications
+<strong>Student Id:</strong> GH1056312</p>
+<h3 id="1.-Business-Context">1. Business Context<a class="anchor-link" href="#1.-Business-Context">¶</a></h3><p><strong>Client:</strong> Olist, an online company that connects small businesses with consumers across the country.</p>
+<p><strong>Dataset:</strong> From 2016 to 2018, around one lakh orders were placed and available in this dataset. Order, customer, product, seller, payment, shipping and customer review details are all included.</p>
 <p><strong>Why a data scientist is needed:</strong><br/>
 Olist wants to find out what is important about its revenue and customer satisfaction. This will help the company make better decisions about inventory, managing sellers, shipping and marketing. They need a clear analysis of their past performance.</p>
 <p><strong>Objective of this project:</strong><br/>
-I am working as a freelance data analyst, my work is to clean and explore the data, answer important business questions and provide recommendations.</p>
-<p><strong>Data source:</strong> <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce">Brazilian E-Commerce Public Dataset by Olist (Kaggle)</a></p>
+I am working as a data analyst with company and I have to clean, analyse and explore the data, answer important business queries and provide suggestions.</p>
+<p><strong>Data Name:</strong> Brazilian E-Commerce Public Dataset by Olist
+<strong>Dataset URL:</strong> <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce">https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce</a></p>
 </div>
 </div>
 </div>
@@ -7544,7 +7547,7 @@ I am working as a freelance data analyst, my work is to clean and explore the da
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [136]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [206]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span> 
@@ -7607,7 +7610,7 @@ Reviews: (99224, 7)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [137]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [207]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Checking missing values and duplicates</span>
@@ -7623,33 +7626,23 @@ Reviews: (99224, 7)
     <span class="s2">"translation"</span><span class="p">:</span> <span class="n">translation</span>
 <span class="p">}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"MISSING VALUES SUMMARY"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"missing values"</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">tables</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">missing</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
     <span class="n">missing</span> <span class="o">=</span> <span class="n">missing</span><span class="p">[</span><span class="n">missing</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">&gt;&gt;&gt; </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">table</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> rows × </span><span class="si">{</span><span class="n">table</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> columns)"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">table</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> rows × </span><span class="si">{</span><span class="n">table</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> columns)"</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"   No missing values"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"No missing values"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">missing</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   Total missing cells: </span><span class="si">{</span><span class="n">table</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"DUPLICATE ROWS SUMMARY"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Total missing cells: </span><span class="si">{</span><span class="n">table</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">tables</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">n_duplicates</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">12</span><span class="si">}</span><span class="s2"> → </span><span class="si">{</span><span class="n">n_duplicates</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> fully duplicate rows"</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"DUPLICATES ON KEY COLUMNS (recommended checks)"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
-
-<span class="c1"># More meaningful duplicate checks on primary / business keys</span>
+<span class="c1"># duplicate checks on primary and business keys</span>
 <span class="n">key_checks</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"customers"</span><span class="p">:</span> <span class="s2">"customer_id"</span><span class="p">,</span>
     <span class="s2">"orders"</span><span class="p">:</span> <span class="s2">"order_id"</span><span class="p">,</span>
@@ -7676,23 +7669,21 @@ Reviews: (99224, 7)
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>============================================================
-MISSING VALUES SUMMARY
-============================================================
+<pre>missing values
 
-&gt;&gt;&gt; CUSTOMERS (99,441 rows × 5 columns)
-   No missing values
+ CUSTOMERS (99,441 rows × 5 columns)
+No missing values
 
-&gt;&gt;&gt; ORDERS (99,441 rows × 8 columns)
+ ORDERS (99,441 rows × 8 columns)
 order_approved_at                 160
 order_delivered_carrier_date     1783
 order_delivered_customer_date    2965
-   Total missing cells: 4,908
+Total missing cells: 4,908
 
-&gt;&gt;&gt; ITEMS (112,650 rows × 7 columns)
-   No missing values
+ ITEMS (112,650 rows × 7 columns)
+No missing values
 
-&gt;&gt;&gt; PRODUCTS (32,951 rows × 9 columns)
+ PRODUCTS (32,951 rows × 9 columns)
 product_category_name         610
 product_name_lenght           610
 product_description_lenght    610
@@ -7701,25 +7692,21 @@ product_weight_g                2
 product_length_cm               2
 product_height_cm               2
 product_width_cm                2
-   Total missing cells: 2,448
+Total missing cells: 2,448
 
-&gt;&gt;&gt; SELLERS (3,095 rows × 4 columns)
-   No missing values
+ SELLERS (3,095 rows × 4 columns)
+No missing values
 
-&gt;&gt;&gt; PAYMENTS (103,886 rows × 5 columns)
-   No missing values
+ PAYMENTS (103,886 rows × 5 columns)
+No missing values
 
-&gt;&gt;&gt; REVIEWS (99,224 rows × 7 columns)
+ REVIEWS (99,224 rows × 7 columns)
 review_comment_title      87656
 review_comment_message    58247
-   Total missing cells: 145,903
+Total missing cells: 145,903
 
-&gt;&gt;&gt; TRANSLATION (71 rows × 2 columns)
-   No missing values
-
-============================================================
-DUPLICATE ROWS SUMMARY
-============================================================
+ TRANSLATION (71 rows × 2 columns)
+No missing values
 customers    → 0 fully duplicate rows
 orders       → 0 fully duplicate rows
 items        → 0 fully duplicate rows
@@ -7728,10 +7715,6 @@ sellers      → 0 fully duplicate rows
 payments     → 0 fully duplicate rows
 reviews      → 0 fully duplicate rows
 translation  → 0 fully duplicate rows
-
-============================================================
-DUPLICATES ON KEY COLUMNS (recommended checks)
-============================================================
 customers    (key: customer_id) → 0 duplicate key(s)
 orders       (key: order_id) → 0 duplicate key(s)
 items        (key: ['order_id', 'order_item_id']) → 0 duplicate key(s)
@@ -7762,15 +7745,15 @@ The dataset is generally clean. Missing values mainly appear in order delivery t
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [138]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [208]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Remove duplicate reviews</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># removing duplicate reviews</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Reviews shape before removing duplicates:"</span><span class="p">,</span> <span class="n">reviews</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Duplicate review_id count:"</span><span class="p">,</span> <span class="n">reviews</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">"review_id"</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 
-<span class="c1"># Keep only the first occurrence of each review_id</span>
+<span class="c1"># Keep only the first instance of each review_id</span>
 <span class="n">reviews</span> <span class="o">=</span> <span class="n">reviews</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">"review_id"</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s2">"first"</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Reviews shape after removing duplicates:"</span><span class="p">,</span> <span class="n">reviews</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -7801,7 +7784,7 @@ Duplicate review_id count after cleaning: 0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [139]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [209]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">review</span> <span class="o">=</span> <span class="n">reviews</span><span class="p">[[</span><span class="s2">"order_id"</span><span class="p">,</span><span class="s2">"review_score"</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s2">"order_id"</span><span class="p">)</span>
@@ -7828,7 +7811,7 @@ This guaranties that every review is only counted once, improving the accuracy a
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [140]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [210]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">orders</span><span class="o">.</span><span class="n">info</span><span class="p">()</span> 
@@ -7865,7 +7848,7 @@ memory usage: 6.1+ MB
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[140]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[210]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>order_status
 delivered      96478
@@ -7909,11 +7892,11 @@ The order table contains various timestamps indicating different phases of the o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [141]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [211]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">date_cols</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">"order_purchase_timestamp"</span><span class="p">,</span> <span class="s2">"order_approved_at"</span><span class="p">,</span> <span class="s2">"order_delivered_carrier_date"</span><span class="p">,</span> <span class="s2">"order_delivered_customer_date"</span><span class="p">,</span> <span class="s2">"order_estimated_delivery_date"</span> <span class="p">]</span> 
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">date_cols</span><span class="p">:</span> <span class="n">orders</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">orders</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">"coerce"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">date_columns</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">"order_purchase_timestamp"</span><span class="p">,</span> <span class="s2">"order_approved_at"</span><span class="p">,</span> <span class="s2">"order_delivered_carrier_date"</span><span class="p">,</span> <span class="s2">"order_delivered_customer_date"</span><span class="p">,</span> <span class="s2">"order_estimated_delivery_date"</span> <span class="p">]</span> 
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">date_columns</span><span class="p">:</span> <span class="n">orders</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">orders</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">"coerce"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7935,7 +7918,7 @@ The order table contains various timestamps indicating different phases of the o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [142]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [212]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">products</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">translation</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">"product_category_name"</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">"left"</span> <span class="p">)</span>
@@ -7962,7 +7945,7 @@ The order table contains various timestamps indicating different phases of the o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [143]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [213]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">delivered</span> <span class="o">=</span> <span class="n">orders</span><span class="p">[</span><span class="n">orders</span><span class="p">[</span><span class="s2">"order_status"</span><span class="p">]</span><span class="o">==</span><span class="s2">"delivered"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> 
@@ -7979,10 +7962,10 @@ The order table contains various timestamps indicating different phases of the o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [144]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [214]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Created an analytical order-item dataset.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Creating analytical order-item dataset.</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">items</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">delivered</span><span class="p">[[</span><span class="s2">"order_id"</span><span class="p">,</span><span class="s2">"customer_id"</span><span class="p">,</span><span class="s2">"order_purchase_timestamp"</span><span class="p">,</span> <span class="s2">"order_delivered_customer_date"</span><span class="p">,</span> <span class="s2">"order_estimated_delivery_date"</span><span class="p">,</span><span class="s2">"delivery_days"</span><span class="p">,</span><span class="s2">"late"</span><span class="p">]],</span> <span class="n">on</span><span class="o">=</span><span class="s2">"order_id"</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">"inner"</span> <span class="p">)</span> 
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">customers</span><span class="p">[[</span><span class="s2">"customer_id"</span><span class="p">,</span><span class="s2">"customer_state"</span><span class="p">]],</span> <span class="n">on</span><span class="o">=</span><span class="s2">"customer_id"</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">"left"</span> <span class="p">)</span> 
@@ -8044,12 +8027,12 @@ This can support inventory, promotion and category-management decisions.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [145]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [215]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">cat_sales</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"category"</span><span class="p">)</span> <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">revenue</span><span class="o">=</span><span class="p">(</span><span class="s2">"revenue"</span><span class="p">,</span><span class="s2">"sum"</span><span class="p">),</span> <span class="n">orders</span><span class="o">=</span><span class="p">(</span><span class="s2">"order_id"</span><span class="p">,</span><span class="s2">"nunique"</span><span class="p">),</span> <span class="n">items</span><span class="o">=</span><span class="p">(</span><span class="s2">"product_id"</span><span class="p">,</span><span class="s2">"count"</span><span class="p">))</span> <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"revenue"</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">cat_sales</span><span class="p">)</span> 
-<span class="n">cat_sales</span><span class="p">[</span><span class="s2">"revenue"</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">"barh"</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">category_sales</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"category"</span><span class="p">)</span> <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">revenue</span><span class="o">=</span><span class="p">(</span><span class="s2">"revenue"</span><span class="p">,</span><span class="s2">"sum"</span><span class="p">),</span> <span class="n">orders</span><span class="o">=</span><span class="p">(</span><span class="s2">"order_id"</span><span class="p">,</span><span class="s2">"nunique"</span><span class="p">),</span> <span class="n">items</span><span class="o">=</span><span class="p">(</span><span class="s2">"product_id"</span><span class="p">,</span><span class="s2">"count"</span><span class="p">))</span> <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"revenue"</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">category_sales</span><span class="p">)</span> 
+<span class="n">category_sales</span><span class="p">[</span><span class="s2">"revenue"</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">"barh"</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Top 10 Product Categories by Revenue"</span><span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Revenue"</span><span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -8117,7 +8100,7 @@ To identify periods of growth, seasonality and potential changes in customer pur
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [146]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [216]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">monthly</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"month"</span><span class="p">)</span> <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">revenue</span><span class="o">=</span><span class="p">(</span><span class="s2">"revenue"</span><span class="p">,</span><span class="s2">"sum"</span><span class="p">),</span> <span class="n">orders</span><span class="o">=</span><span class="p">(</span><span class="s2">"order_id"</span><span class="p">,</span><span class="s2">"nunique"</span><span class="p">))</span> <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span> <span class="p">)</span> 
@@ -8172,12 +8155,12 @@ Geographic analysis helps the business to find its strongest markets and see whe
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [147]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [217]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">state_sales</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"customer_state"</span><span class="p">)</span> <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">revenue</span><span class="o">=</span><span class="p">(</span><span class="s2">"revenue"</span><span class="p">,</span><span class="s2">"sum"</span><span class="p">),</span> <span class="n">orders</span><span class="o">=</span><span class="p">(</span><span class="s2">"order_id"</span><span class="p">,</span><span class="s2">"nunique"</span><span class="p">))</span> <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"revenue"</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">state_sales</span><span class="p">)</span> 
-<span class="n">state_sales</span><span class="p">[</span><span class="s2">"revenue"</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">kind</span><span class="o">=</span><span class="s2">"barh"</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="p">)</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">state_sales_data</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"customer_state"</span><span class="p">)</span> <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">revenue</span><span class="o">=</span><span class="p">(</span><span class="s2">"revenue"</span><span class="p">,</span><span class="s2">"sum"</span><span class="p">),</span> <span class="n">orders</span><span class="o">=</span><span class="p">(</span><span class="s2">"order_id"</span><span class="p">,</span><span class="s2">"nunique"</span><span class="p">))</span> <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"revenue"</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">state_sales_data</span><span class="p">)</span> 
+<span class="n">state_sales_data</span><span class="p">[</span><span class="s2">"revenue"</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">kind</span><span class="o">=</span><span class="s2">"barh"</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Top Customer States by Revenue"</span><span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Revenue"</span><span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -8245,7 +8228,7 @@ Due to Late delivery, the customer can effect negatively. Understanding the rela
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [148]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [218]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">review</span> <span class="o">=</span> <span class="n">reviews</span><span class="p">[[</span><span class="s2">"order_id"</span><span class="p">,</span><span class="s2">"review_score"</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s2">"order_id"</span><span class="p">)</span> 
@@ -8313,7 +8296,7 @@ Seller performance is important because Olist operates as a marketplace. Identif
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [149]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [219]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">seller_rev</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"seller_id"</span><span class="p">)</span> <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">revenue</span><span class="o">=</span><span class="p">(</span><span class="s2">"revenue"</span><span class="p">,</span><span class="s2">"sum"</span><span class="p">),</span> <span class="n">orders</span><span class="o">=</span><span class="p">(</span><span class="s2">"order_id"</span><span class="p">,</span><span class="s2">"nunique"</span><span class="p">))</span> <span class="p">)</span> 
@@ -8379,7 +8362,7 @@ Payment behaviour can influence checkout design and customer convenience. Unders
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [150]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [220]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">payment_summary</span> <span class="o">=</span> <span class="p">(</span> <span class="n">payments</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"payment_type"</span><span class="p">)</span> <span class="o">.</span><span class="n">agg</span><span class="p">(</span> <span class="n">orders</span><span class="o">=</span><span class="p">(</span><span class="s2">"order_id"</span><span class="p">,</span><span class="s2">"nunique"</span><span class="p">),</span> <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="s2">"payment_value"</span><span class="p">,</span><span class="s2">"sum"</span><span class="p">)</span> <span class="p">)</span> <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"value"</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="p">)</span> 
@@ -8448,10 +8431,10 @@ Revenue alone does not provide a complete picture of product performance. Catego
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [151]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [221]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Creating a unique order-category combination</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Creating unique order-category combination</span>
 <span class="n">category_review</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">df</span><span class="p">[[</span><span class="s2">"order_id"</span><span class="p">,</span> <span class="s2">"category"</span><span class="p">]]</span>
     <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
@@ -8484,7 +8467,7 @@ Revenue alone does not provide a complete picture of product performance. Catego
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[151]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[221]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8594,7 +8577,7 @@ The result only check at categories that have a minimum number of reviews. This 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [152]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [222]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">cat_review_filtered</span> <span class="o">=</span> <span class="n">cat_review</span><span class="p">[</span><span class="n">cat_review</span><span class="p">[</span><span class="s2">"reviews"</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">]</span>
@@ -8634,7 +8617,7 @@ telephony                     4064  4.052165
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [153]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [223]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">cat_review_filtered</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)[</span><span class="s2">"score"</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
@@ -8692,7 +8675,7 @@ Freight is a significant part of the customer purchase experience. High shipping
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [154]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [224]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">freight_review</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="p">[[</span><span class="s2">"order_id"</span><span class="p">,</span><span class="s2">"freight_value"</span><span class="p">]]</span> <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">review</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s2">"order_id"</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s2">"inner"</span><span class="p">)</span> <span class="p">)</span> 
